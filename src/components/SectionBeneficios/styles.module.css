@@ -1,0 +1,97 @@
+.sectionBeneficios {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* divide em 2 quadrados */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 529px;
+  display: flex;
+}
+
+/* lado esquerdo: bloco roxo translúcido */
+.left {
+  flex: 1;
+  background: rgba(89, 25, 160, 0.75); /* deixar 75 transparência */
+  color: var(--color-white);
+  display: flex;
+  align-items: stretch;
+}
+
+/* conteúdo com margem lateral de 20% (10% de cada lado) */
+.leftInner {
+  width: 60%;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* lado direito: apenas mostra o fundo */
+.right {
+  flex: 1;
+}
+
+/* ---- textos ---- */
+
+.subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+}
+
+.title span {
+  color: var(--color-primary); /* laranja imoGo */
+}
+
+.description {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0 0 1.8rem 0;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.footerText {
+  font-size: 1.6rem;
+}
+
+/* --------- Responsivo --------- */
+
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left {
+    flex: none;
+  }
+
+  .right {
+    display: none; /* some o lado direito no mobile */
+  }
+
+  .leftInner {
+    width: 80%;
+    margin: 2rem auto;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

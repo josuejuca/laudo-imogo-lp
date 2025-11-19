@@ -1,0 +1,120 @@
+.footer {
+  width: 100%;
+  background: var(--color-background-footer);
+  padding: 2rem 0 2.5rem;
+  color: var(--color-tertiary);
+  font-size: 0.9rem;
+}
+
+/* topo: logo à esquerda, ícones à direita */
+.top {
+  max-width: 1200px;
+  height: 3.2rem;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 32px;
+  display: block;
+}
+
+.social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social a img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social a:hover img {
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+/* linha divisória */
+.divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1px;
+  background: var(--color-white);
+}
+
+/* parte de baixo: textos centralizados */
+.bottom {
+  font-size: 1.6rem;
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.bottom p {
+  margin: 0.2rem 0;
+  font-size: 1.4rem;
+}
+
+.powered a  {
+  color: var(--color-tertiary);
+  text-decoration: none;
+}
+
+.powered a:hover {
+  opacity: 0.85;
+}
+
+.powered {
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+
+/* substitui a regra anterior do iframe */
+.statusWrapper iframe {
+  display: inline-block;
+  margin-left: 42.5% !important; /* gambiarra de leves para deixar isso centralizado*/
+  max-width: 220px; /* controla o tamanho máximo */
+  width: auto; /* usa largura natural até o max */
+  height: 30px; /* mantém altura  */
+  margin: 0.6rem auto; /* centraliza horizontalmente */
+  border: 0;
+}
+
+/* novo wrapper para garantir centralização */
+.statusWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* --------- Responsivo --------- */
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .social {
+    gap: 0.6rem;
+  }
+
+  .bottom {
+    font-size: 0.85rem;
+  }
+
+  .statusWrapper iframe {
+    margin-left: auto !important;
+    max-width: 180px; /* menor em telas pequenas */
+    height: 28px;
+    margin: 0.6rem auto 0;
+  }
+}

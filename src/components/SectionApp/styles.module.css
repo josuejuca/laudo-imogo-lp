@@ -1,0 +1,115 @@
+.sectionApp {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 2 quadrados (colunas) */
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 470px;
+  display: flex;
+}
+
+/* Lado esquerdo: só a imagem de fundo aparece */
+.left {
+  flex: 1;
+}
+
+/* Lado direito: bloco laranja com textos */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caixa de texto */
+.textBox {
+  width: 80%;
+  max-width: 460px;
+  color: var(--color-white);
+}
+
+.subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.title span {
+  color: var(--color-secondary); /* roxo imoGo */
+}
+
+.description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+/* Botão */
+.button {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1.8rem 9rem;
+  border-radius: 999px;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.button:hover {
+  opacity: 0.95;
+}
+
+/* -------- Responsivo -------- */
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    flex-direction: column;
+    min-height: 320px;
+  }
+
+  .left {
+    display: none; /* some a coluna esquerda no mobile */
+  }
+
+  .right {
+    flex: none;
+    padding: 3rem 1.5rem;
+  }
+
+  .textBox {
+    width: 100%;
+    max-width: 100%;
+    text-align: start;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .button{
+    display: block;
+    text-align: center;
+
+    
+      cursor: pointer;
+      padding: 1.8rem 9rem;
+      border-radius: 999px;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      font-weight: 600;
+      font-size: 1.1rem;
+  }
+}
