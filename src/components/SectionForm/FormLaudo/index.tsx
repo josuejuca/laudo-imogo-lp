@@ -29,8 +29,12 @@ interface TipoImovelAPI {
   tipo: string;
 }
 
-// Ex: { "AGUAS CLARAS": { "ADE": ["ADE CONJUNTO 01", ...], ... }, ... }
-type EnderecosResponse = Record<string, Record<string, string[]>>;
+// Ex: { "enderecos": { "AGUAS CLARAS": { "ADE": ["ADE CONJUNTO 01", ...], ... } } }
+type EnderecosAPIResponse = {
+  enderecos: Record<string, Record<string, string[]>>;
+};
+
+type EnderecosMap = Record<string, Record<string, string[]>>;
 
 const padroesImovel = [
   "ORIGINAL, REQUER MUITOS REPAROS",
@@ -73,7 +77,7 @@ export function FormLaudo() {
   const [errorTipos, setErrorTipos] = useState<string | null>(null);
 
   // ENDEREÇOS
-  const [enderecosMap, setEnderecosMap] = useState<EnderecosResponse>({});
+  const [enderecosMap, setEnderecosMap] = useState<EnderecosMap>({});
   const [loadingEnderecos, setLoadingEnderecos] = useState(false);
   const [errorEnderecos, setErrorEnderecos] = useState<string | null>(null);
 
@@ -127,12 +131,12 @@ export function FormLaudo() {
         setLoadingEnderecos(true);
         setErrorEnderecos(null);
 
-        const response = await axios.get<EnderecosResponse>(
+        const response = await axios.get<EnderecosAPIResponse>(
           `${host}/api/laudo/enderecos/df`,
           { headers: { Accept: "application/json" } }
         );
 
-        setEnderecosMap(response.data || {});
+        setEnderecosMap(response.data?.enderecos || {});
       } catch (err) {
         console.error("Erro ao buscar endereços:", err);
         setErrorEnderecos("Erro ao carregar cidades e bairros.");

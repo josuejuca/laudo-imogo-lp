@@ -41,3 +41,7 @@ Criação do formulário e testes com a API, ajustes na responsividade, atualiza
 [x] Criação do formulário do laudo 
 [x] Integração com a API da imoGo
 
+$24/11/2025
+Correção de bug:
+- EnderecosResponse
+
